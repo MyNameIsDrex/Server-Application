@@ -1,3 +1,5 @@
+using Server_Application.Properties;
+
 namespace Server_Application
 {
     public partial class Application : Form
@@ -10,7 +12,11 @@ namespace Server_Application
 
         private void Application_Load(object sender, EventArgs e)
         {
-
+            if (signin_checkbox.Checked)
+            {
+                databaseform Database = new databaseform();
+                Database.Show();
+            }
         }
 
         private void button_login_Click(object sender, EventArgs e)
@@ -30,6 +36,11 @@ namespace Server_Application
             {
                 Console.WriteLine("Error");
             }
+        }
+
+        private void signin_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.stay_logged_in = signin_checkbox.Checked;
         }
     }
 }

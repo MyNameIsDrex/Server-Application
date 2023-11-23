@@ -40,8 +40,15 @@
             select_label = new Label();
             select_textbox = new TextBox();
             uploadfile_dialog = new OpenFileDialog();
+            menuStrip1 = new MenuStrip();
+            editToolStripMenuItem = new ToolStripMenuItem();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            editToolStripMenuItem1 = new ToolStripMenuItem();
             upload_panel.SuspendLayout();
             fetch_panel.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // upload_panel
@@ -50,7 +57,7 @@
             upload_panel.Controls.Add(filepath_label);
             upload_panel.Controls.Add(browse_button);
             upload_panel.Controls.Add(filepath_textbox);
-            upload_panel.Location = new Point(12, 12);
+            upload_panel.Location = new Point(12, 46);
             upload_panel.Name = "upload_panel";
             upload_panel.Size = new Size(324, 103);
             upload_panel.TabIndex = 0;
@@ -99,7 +106,7 @@
             fetch_panel.Controls.Add(button1);
             fetch_panel.Controls.Add(select_label);
             fetch_panel.Controls.Add(select_textbox);
-            fetch_panel.Location = new Point(12, 121);
+            fetch_panel.Location = new Point(12, 152);
             fetch_panel.Name = "fetch_panel";
             fetch_panel.Size = new Size(324, 238);
             fetch_panel.TabIndex = 4;
@@ -148,21 +155,69 @@
             select_textbox.Size = new Size(241, 27);
             select_textbox.TabIndex = 0;
             // 
-            // database
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, editToolStripMenuItem1 });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.TabIndex = 5;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, exitToolStripMenuItem });
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(46, 24);
+            editToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.Size = new Size(224, 26);
+            newToolStripMenuItem.Text = "New";
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(224, 26);
+            openToolStripMenuItem.Text = "Open";
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(224, 26);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // editToolStripMenuItem1
+            // 
+            editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            editToolStripMenuItem1.Size = new Size(49, 24);
+            editToolStripMenuItem1.Text = "Edit";
+            // 
+            // databaseform
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(fetch_panel);
             Controls.Add(upload_panel);
-            Name = "database";
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "databaseform";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Database";
             Load += database_Load;
             upload_panel.ResumeLayout(false);
             upload_panel.PerformLayout();
             fetch_panel.ResumeLayout(false);
             fetch_panel.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -179,5 +234,11 @@
         private Label label2;
         private TextBox from_textbox;
         private OpenFileDialog uploadfile_dialog;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem1;
     }
 }

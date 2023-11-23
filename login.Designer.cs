@@ -114,6 +114,7 @@
             signin_checkbox.TabIndex = 3;
             signin_checkbox.Text = "Keep me signed in";
             signin_checkbox.UseVisualStyleBackColor = true;
+            signin_checkbox.CheckedChanged += signin_checkbox_CheckedChanged;
             // 
             // Application
             // 

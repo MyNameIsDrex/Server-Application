@@ -35,7 +35,12 @@ namespace Server_Application
 
         private void browse_button_Click(object sender, EventArgs e)
         {
-            uploadfile_dialog.ShowDialog();
+            //uploadfile_dialog.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 
