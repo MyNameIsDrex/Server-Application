@@ -21,8 +21,6 @@ namespace Server_Application
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            Hide(); //this demonstrates the login functionality, but still necessary to close this window on login
-
             if (username_input.Text == PLACEHOLDER && password_input.Text == PLACEHOLDER) //replace with database entries
             {
                 //do the login thing
@@ -31,6 +29,10 @@ namespace Server_Application
 
                 databaseform Database = new databaseform();
                 Database.Show();
+
+                Form form = new Form();
+                form.Close();
+                Hide();
             }
             else
             {
